@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 34f611bd23e8bba4ba4aa34ab20e54b4
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ojuju
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f2ca568ff12c15e428c2a0fcbe744cea, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
