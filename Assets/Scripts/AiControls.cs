@@ -16,7 +16,7 @@ public class AiControls : MonoBehaviour
         AttackChecker.transform.localPosition = new Vector3(0, 2.88f, 0);
         AttackChecker.transform.rotation = Quaternion.identity;
         AttackChecker.AddComponent<SphereCollider>();
-        AttackChecker.transform.localScale = new Vector3(7, 7, 7);
+        AttackChecker.transform.localScale = new Vector3(8, 8, 8);
         AttackChecker.GetComponent<SphereCollider>().isTrigger = true;
         AttackChecker.gameObject.tag = this.gameObject.tag;
         AttackChecker.AddComponent<AttackChecker>();

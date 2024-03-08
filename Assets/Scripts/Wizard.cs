@@ -190,14 +190,48 @@ public class Wizard : MonoBehaviour
         StartCoroutine(Fire_Delay());
     }
 
+    public void SpecialAttackFire()
+    {
+        iK.ikActive = true;
+        Enemy.GetComponent<Wizard>().Electric();
+        beamStart = Instantiate(wand.beamStartPrefab, wand.WandOffset.position, Quaternion.identity) as GameObject;
+        wand.StopGlow();
+        for (int i = 0; i < beamStart.GetComponent<ParticleData>().particleSystems.Length; i++)
+        {
+            beamStart.GetComponent<ParticleData>().particleSystems[i].startColor = SpellColor;
+        }
+        beamStart.GetComponentInChildren<MagicLightFlicker>().originalColor = SpellColor;
+        beamEnd = Instantiate(wand.beamEndPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        for (int i = 0; i < beamEnd.GetComponent<ParticleData>().particleSystems.Length; i++)
+        {
+            beamEnd.GetComponent<ParticleData>().particleSystems[i].startColor = SpellColor;
+        }
+        beamEnd.GetComponentInChildren<MagicLightFlicker>().originalColor = SpellColor;
+        beam = Instantiate(wand.beamLineRendererPrefab, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+        line = beam.GetComponent<LineRenderer>();
+        line.startColor = new Color(SpellColor.r, SpellColor.g, SpellColor.b, 0);
+        line.endColor = SpellColor;
+        Vector3 tdir = Enemy.position - transform.position;
+        ShootBeamInDir(tdir);
+        _gameManager.Shake();
+
+        _stats.WizardUI.EnergyBar.DOFillAmount(0, ParticleDelay).OnComplete(() =>
+        {
+
+            _stats.WizardUI.EnergyNormalized();
+        });
+        StartCoroutine(Destroy_Delay());
+    }
+
     [System.Obsolete]
     IEnumerator Fire_Delay()
     {
         yield return new WaitForSeconds(ParticleDelay);
+        iK.ikActive = true;
+        yield return new WaitForSeconds(0.1f);
         Enemy.GetComponent<Wizard>().Electric();
         beamStart = Instantiate(wand.beamStartPrefab, wand.WandOffset.position,Quaternion.identity) as GameObject;
         wand.StopGlow();
-        iK.ikActive = true;
         for (int i = 0; i < beamStart.GetComponent<ParticleData>().particleSystems.Length; i++)
         {
             beamStart.GetComponent<ParticleData>().particleSystems[i].startColor = SpellColor;

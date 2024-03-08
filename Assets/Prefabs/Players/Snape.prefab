@@ -26677,10 +26677,10 @@ MonoBehaviour:
   textureScrollSpeed: 8
   textureLengthScale: 3
   wand: {fileID: 4854765392810206766}
-  ParticleDelay: 1
+  ParticleDelay: 0.8
   FireDuration: 3
   AttackHoldDelay: 1
-  EndingOffset: {x: 1.2, y: 0, z: 0}
+  EndingOffset: {x: -0.3, y: 0, z: 0}
   SpellColor: {r: 0.118086085, g: 0.9622642, b: 0.013616921, a: 1}
   SphereObject: {fileID: 8985958239999553880}
   Enemy: {fileID: 0}

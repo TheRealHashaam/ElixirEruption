@@ -1922,6 +1922,7 @@ MonoBehaviour:
   Wizards:
   - {fileID: 6165802358406225750, guid: 1f0732f2a7477f946b8d4cebf96722f4, type: 3}
   - {fileID: 8973747319169120388, guid: 03e82cc1476e36d45b952f679a72f582, type: 3}
+  - {fileID: 4699451201271354894, guid: fc46d3061e9666e49a8e1a2ece872f02, type: 3}
   StartScreen: {fileID: 409608613}
   Text1: {fileID: 1453234723}
   Text2: {fileID: 598783493}

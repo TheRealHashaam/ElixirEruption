@@ -2323,7 +2323,7 @@ MonoBehaviour:
   textureScrollSpeed: 8
   textureLengthScale: 3
   wand: {fileID: 2647384540900474136}
-  ParticleDelay: 1
+  ParticleDelay: 0.8
   FireDuration: 3
   AttackHoldDelay: 1
   EndingOffset: {x: 1.2, y: 0, z: 0}
